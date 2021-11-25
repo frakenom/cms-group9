@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
     $fullname = $_POST['fullname'];
     $age = $_POST['age'];
 
-    $insert = mysqli_query($db,"INSERT INTO `tblemp`(`fullname`, `age`) VALUES ('$fullname','$age')");
+    $insert = mysqli_query($connect,"INSERT INTO `contact`(`fullname`, `email`, 'student', 'program', 'message') VALUES ('$fullname','$email', '$student', '$program', '$message')");
 
     if(!$insert)
     {
