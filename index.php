@@ -72,7 +72,8 @@
     
     <div class="hero-message">
 
-
+        <h1><?php echo $record["heading"]; ?></h1>
+        <h3><?php echo $record["subheading"];?></h3>
         <?php break 1;?>
         
     </div>
