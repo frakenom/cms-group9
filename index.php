@@ -1,106 +1,113 @@
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-    <meta charset="UTF-8">
-    <title>CMS Assignment</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-    <!-- <link href="css/style.css" rel="stylesheet" type="text/css">  -->
-</head>
-<body>
-<?php
 
-    // Connect to the MySQL database
-    $connect = mysqli_connect(
-        'sql208.epizy.com', //hostname
-        'epiz_30348373', //username
-        'gpwDiTjdJMBKqIr', //password
-        'epiz_30348373_cmsgroup9'); //database
+    <head>
+        <meta charset="UTF-8">
+        <title>CMS Assignment</title>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+        <link href="/css/style.css" rel="stylesheet" type="text/css"> 
+    </head>
 
-    // Error message: If the connection didn't go through
-    if (!$connect) 
-    {
-        echo 'Error Code: ' . mysqli_connect_errno() . '<br>';
-        echo 'Error Message: ' . mysqli_connect_error() . '<br>';
-        exit;
-    }
+    <body>
+        <?php
 
-    // created a query
-    $query = 'SELECT id, heading, subheading, body, image
-        FROM home';
+            // Connect to the MySQL database
+            $connect = mysqli_connect(
+                'sql208.epizy.com', //hostname
+                'epiz_30348373', //username
+                'gpwDiTjdJMBKqIr', //password
+                'epiz_30348373_cmsgroup9'); //database
 
-    // query execution
-    $result = mysqli_query($connect, $query);
+            // Error message: If the connection didn't go through
+            if (!$connect) 
+            {
+                echo 'Error Code: ' . mysqli_connect_errno() . '<br>';
+                echo 'Error Message: ' . mysqli_connect_error() . '<br>';
+                exit;
+            }
 
-    // Error message: If no result found
-    if (!$result)
-    {
-        echo 'Error Message: ' . mysqli_error($connect) . '<br>';
-        exit;
-    }
-?>
+            // created a query
+            $query = 'SELECT id, heading, subheading, body, image
+                FROM home';
 
-<div class="wrapper">
+            // query execution
+            $result = mysqli_query($connect, $query);
 
-<!-- Header and Nav MenuBar ------------------------------------------------------------------ -->
+            // Error message: If no result found
+            if (!$result)
+            {
+                echo 'Error Message: ' . mysqli_error($connect) . '<br>';
+                exit;
+            }
+        ?>
 
-    <header class="header"> 
-        <nav class="navbar">
-            <div class="home-logo">
-                <img src="/images/logo.png" alt="logo" width="100px">
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#department">Department</a></li>
-                <li><a href="contactus.php">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="wrapper">
 
-<!-- Home page ------------------------------------------------------------------ -->
+        <!-- Header and Nav MenuBar ------------------------------------------------------------------ -->
 
-<section class="home-page">
+            <header class="header"> 
+                <nav class="navbar">
+                    <div class="home-logo">
+                        <img src="/images/logo.png" alt="logo" width="100px">
+                    </div>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#department">Department</a></li>
+                        <li><a href="contactus.php">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-    <?php while ($record = mysqli_fetch_array($result)) { ?>
+        <!-- Home page ------------------------------------------------------------------ -->
 
-<!-- Hero-image and message -->
+            <section class="home-page">
 
-    <div class="hero-image"> 
-       
-        <!-- <img src="<//?php echo $record["image"]; ?>"> -->
-                
-    </div>
-    
-    <div class="hero-message">
+            <!-- Hero-image -->
 
-        <h1><?php echo $record["heading"]; ?></h1>
-        <h3><?php echo $record["subheading"];?></h3>
-        <?php break 1;?>
-        
-    </div>
+                <div class="hero-section">
+                    <img src="/images/hero-image-01.jpg" alt="hero" width="100px">
+                </div>
 
-    <?php } ?>
-    
-</section>
+                <?php while ($record = mysqli_fetch_array($result)) { ?>
 
+            <!-- Hero message -->
 
-</div>
+                <div class="hero-message">
 
-<section class="home-page">
-		<div class="home-department">
-            
-            <?php while ($record = mysqli_fetch_array($result)){?>
-				
-                <div class="department">
+                    <h1><?php echo $record["heading"]; ?></h1>
+                    <h3><?php echo $record["subheading"];?></h3>
+                    <?php break 1;?>
+                    
+                </div>
 
-                    <h2><?php echo $record["heading"]; ?></h2>
+                <?php } ?>
 
+                <div class="button" >
+                    <a href="#department.php">Learn more</a>
                 </div>
                 
-            <?php  } ?>
-            
-		</div>
-</section>
+            </section>
 
-  
-</body>
+
+
+
+            <section class="home-page">
+                    <div class="home-department">
+                        
+                        <?php while ($record = mysqli_fetch_array($result)){?>
+                            
+                            <div class="department">
+
+
+                                <h2><?php echo $record["heading"]; ?></h2>
+
+                            </div>
+                            
+                        <?php  } ?>
+                        
+                    </div>
+            </section>
+        </div>
+    
+    </body>
 </html>
