@@ -19,6 +19,7 @@
         $message = $_POST['message'];
 
         $insert = mysqli_query($connect,"INSERT INTO `contact`(`fullname`, `email`, 'student', 'program', 'message') VALUES ('$fullname','$email', '$student', '$program', '$message')");
+        $result = mysqli_query($connection, $query);
 
         if(!$insert)
         {
