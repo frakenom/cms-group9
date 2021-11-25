@@ -41,6 +41,7 @@ include 'includes/wideimage/WideImage.php';
     <th align="left">Heading</th>
     <th align="center">Sub-Heading</th>
     <th align="center">Body</th>
+    <th align="center">URL</th>
 
     <th></th>
     <th></th>
@@ -55,6 +56,8 @@ include 'includes/wideimage/WideImage.php';
       <td align="left"><?php echo htmlentities( $record['heading'] ); ?></td>
       <td align="center"><?php echo $record['subheading']; ?></td>
       <td align="left"><?php echo $record['body']; ?></td>
+      <td align="left"><?php echo $record['url']; ?></td>
+
 
 
       <td align="center"><a href="home_photo.php?id=<?php echo $record['id']; ?>">Photo</i></a></td>

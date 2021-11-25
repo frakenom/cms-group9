@@ -17,11 +17,14 @@ if( isset( $_POST['heading'] ) )
     $query = 'INSERT INTO home (
         heading,
         subheading,
-        body
+        body,
+        url
       ) VALUES (
          "'.mysqli_real_escape_string( $connect, $_POST['heading'] ).'",
          "'.mysqli_real_escape_string( $connect, $_POST['subheading'] ).'",
-         "'.mysqli_real_escape_string( $connect, $_POST['body'] ).'"
+         "'.mysqli_real_escape_string( $connect, $_POST['body'] ).'",
+         "'.mysqli_real_escape_string( $connect, $_POST['url'] ).'"
+
       )';
 
 
@@ -54,6 +57,11 @@ if( isset( $_POST['heading'] ) )
   
   <label for="body">Body:</label>
   <textarea type="text" name="body" id="body" rows="10"></textarea>
+
+  <br>
+  
+  <label for="url">URL:</label>
+  <input type="text" name="url" id="url">
       
   <script>
 

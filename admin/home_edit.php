@@ -25,7 +25,9 @@ if( isset( $_POST['heading'] ) )
     $query = 'UPDATE home SET
       heading = "'.mysqli_real_escape_string( $connect, $_POST['heading'] ).'",
       subheading = "'.mysqli_real_escape_string( $connect, $_POST['subheading'] ).'",
-      body = "'.mysqli_real_escape_string( $connect, $_POST['body'] ).'"
+      body = "'.mysqli_real_escape_string( $connect, $_POST['body'] ).'",
+      url = "'.mysqli_real_escape_string( $connect, $_POST['url'] ).'"
+
       WHERE id = '.$_GET['id'].'
       LIMIT 1';
     mysqli_query( $connect, $query );
@@ -79,6 +81,11 @@ if( isset( $_GET['id'] ) )
   
   <label for="body">Body:</label>
   <textarea type="text" name="body" id="body" rows="5"><?php echo htmlentities( $record['body'] ); ?></textarea>
+  
+  <br>
+  
+  <label for="url">URL:</label>
+  <input type="text" name="url" id="url" value="<?php echo htmlentities( $record['url'] ); ?>">
   
   <script>
 
