@@ -25,7 +25,7 @@ if( isset( $_GET['delete'] ) )
 
 $query = 'SELECT *
   FROM contact
-  ORDER BY id DESC';
+  ORDER BY fullname DESC';
 $result = mysqli_query( $connect, $query );
 
 ?>
@@ -34,7 +34,6 @@ $result = mysqli_query( $connect, $query );
 
 <table>
   <tr>
-    <th align="center">ID</th>
     <th align="center">Full Name</th>
     <th align="center">Email</th>
     <th align="center">Student Status</th>
@@ -45,7 +44,6 @@ $result = mysqli_query( $connect, $query );
   </tr>
   <?php while( $record = mysqli_fetch_assoc( $result ) ): ?>
     <tr>
-      <td align="center"><?php echo $record['id']; ?></td>
       <td align="center"><?php echo htmlentities( $record['fullname'] ); ?></td>
       <td align="center"><?php echo $record['email']; ?></td>
       <td align="center"><?php echo $record['student']; ?></td>
