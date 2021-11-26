@@ -45,7 +45,7 @@
             <div class="fix-container">             
                 <nav class="navbar">
                     <div class="left-header">
-                        <a href="index.html">Oasis University</a>
+                        <a href="http://mmdd209-group9.infinityfreeapp.com">Oasis University</a>
                     </div>
                     <div class="right-header">
                         <ul>
