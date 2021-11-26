@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <title>CMS Assignment</title>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-        <link href="/css/style.css" rel="stylesheet" type="text/css"> 
+        <link rel="stylesheet" href="/css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -27,7 +27,7 @@
             }
 
             // created a query
-            $query = 'SELECT id, heading, subheading, body, image
+            $query = 'SELECT id, heading, subheading, body, image, url
                 FROM home';
 
             // query execution
@@ -41,64 +41,66 @@
             }
         ?>
 
-        <div class="wrapper">
-
-        <!-- Header and Nav MenuBar ------------------------------------------------------------------ -->
-
-            <header class="header"> 
+        <header>
+            <div class="fix-container">             
                 <nav class="navbar">
-                    <div class="home-logo">
-                        <img src="/images/logo.png" alt="logo" width="100px">
+                    <div class="left-header">
+                        <a href="index.html">Oasis University</a>
                     </div>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#department">Department</a></li>
-                        <li><a href="contactus.php">Contact Us</a></li>
-                    </ul>
-                </nav>
-            </header>
-
+                    <div class="right-header">
+                        <ul>
+                            <li>
+                                <a id="active" class="one" href="http://mmdd209-group9.infinityfreeapp.com">Home</a>
+                            </li>
+                            <li>
+                                <a class="two" href="department.html">Department</a>
+                            </li>
+                            <li>
+                                <a class="three" href="purchase.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>           
+            </div>
+        </header>
         <!-- Home page ------------------------------------------------------------------ -->
-
-            <section class="home-page">
+        <div class="fix-container">
+            <section class="hero-section">
 
             <!-- Hero-image -->
+            <?php while ($record = mysqli_fetch_array($result)) { ?>
 
-                <div class="hero-section">
-                    <img src="/images/hero-image-01.jpg" alt="hero" width="100px">
-                </div>
-
-                <?php while ($record = mysqli_fetch_array($result)) { ?>
-
+                <div class="hero-image">
+                    <img src="<?php echo $record['url']; ?>" alt="hero" height="1000px">
+                </div>               
             <!-- Hero message -->
 
                 <div class="hero-message">
 
                     <h1><?php echo $record["heading"]; ?></h1>
                     <h3><?php echo $record["subheading"];?></h3>
-                    <?php break 1;?>
+                    <?php break;?>
                     
                 </div>
 
+
                 <?php } ?>
 
-                <div class="button" >
-                    <a href="#department.php">Learn more</a>
-                </div>
+                <div class="hero-button">
+                <p><a class="white" href="department.html"><span class="bg"></span><span class="base"></span><span class="text">Learn more</span></a></p>
+            </div>
                 
             </section>
 
-
-
-
-            <section class="home-page">
+            <section class="detail-section">
+                <h1>FACULTIES & PROGRAMS</h1>
                     <div class="home-department">
                         
                         <?php while ($record = mysqli_fetch_array($result)){?>
                             
                             <div class="department">
 
-
+                                <img src="<?php echo $record['image']; ?>" alt="hero" height="300px">
                                 <h2><?php echo $record["heading"]; ?></h2>
 
                             </div>
