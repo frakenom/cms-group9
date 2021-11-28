@@ -60,7 +60,9 @@ header {
 }
 
 .left-header a{
-    color:#f0f0f0
+    color:#f0f0f0;
+    text-decoration: none;
+
 }
 
 header ul {
@@ -135,6 +137,20 @@ header ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .bottom-footer{
+    width: 100%;
+    height: 50px;
+    background-color: #161515;
+  }
+
+  .bottom-footer h3{
+    margin: 0;
+    padding-top: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
   }
 
 
