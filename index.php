@@ -53,10 +53,10 @@
                                 <a id="active" class="one" href="http://mmdd209-group9.infinityfreeapp.com">Home</a>
                             </li>
                             <li>
-                                <a class="two" href="department.html">Department</a>
+                                <a class="two" href="department.php">Department</a>
                             </li>
                             <li>
-                                <a class="three" href="purchase.html">Contact</a>
+                                <a class="three" href="contact.php">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -109,7 +109,15 @@
                         
                     </div>
             </section>
+
+
         </div>
+
+        <footer> 
+                <div class="bottom-footer">
+                    <h3>All right reserved. 2021.</h3>
+                </div>
+        </footer>
     
     </body>
 </html>
