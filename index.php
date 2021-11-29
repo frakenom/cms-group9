@@ -3,9 +3,13 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>CMS Assignment</title>
+        <title>Oasis University</title>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
         <link rel="stylesheet" href="/css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -41,12 +45,23 @@
             }
         ?>
 
+<!-- start  -->
+
         <header>
-            <div class="fix-container">             
+            <div class="fix-container">
+                
+            <!-- navigation -->
+                            
                 <nav class="navbar">
+                    
+                <!-- Logo -->
+                                        
                     <div class="left-header">
                         <a href="http://mmdd209-group9.infinityfreeapp.com">Oasis University</a>
                     </div>
+
+                <!-- //menu item -->
+
                     <div class="right-header">
                         <ul>
                             <li>
@@ -63,16 +78,21 @@
                 </nav>           
             </div>
         </header>
+
         <!-- Home page ------------------------------------------------------------------ -->
+
         <div class="fix-container">
             <section class="hero-section">
                 
-            <!-- Hero-image -->
+
             <?php while ($record = mysqli_fetch_array($result)) { ?>
+
+            <!-- Hero-image -->
 
                 <div class="hero-image">
                     <img src="<?php echo $record['url']; ?>" alt="hero" height="1000px">
-                </div>               
+                </div>    
+
             <!-- Hero message -->
 
                 <div class="hero-message">
@@ -83,14 +103,15 @@
                     
                 </div>
 
-
-                <?php } ?>
+            <?php } ?>
 
                 <div class="hero-button">
-                <p><a class="white" href="department.html"><span class="bg"></span><span class="base"></span><span class="text">Learn more</span></a></p>
+                <p><a class="white" href="department.php"><span class="bg"></span><span class="base"></span><span class="text">Learn more</span></a></p>
             </div>
                 
             </section>
+
+<!-- Faculty Section -->
 
             <section class="detail-section">
                 <h1>FACULTIES & PROGRAMS</h1>
@@ -98,9 +119,11 @@
                         
                         <?php while ($record = mysqli_fetch_array($result)){?>
                             
+<!-- Looping to get all depts. -->
+
                             <div class="department">
 
-                                <img src="<?php echo $record['image']; ?>" alt="hero" height="300px">
+                                <a href="<?php echo $record['url'];?>"><img src="<?php echo $record['image']; ?>" alt="hero" height="300px"></a>
                                 <h2><?php echo $record["heading"]; ?></h2>
 
                             </div>
@@ -113,6 +136,7 @@
 
         </div>
 
+        <!-- Footer -->
         <footer> 
                 <div class="bottom-footer">
                     <h3>All right reserved. 2021.</h3>
