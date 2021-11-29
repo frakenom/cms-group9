@@ -9,6 +9,7 @@ html{
 }
 
 body{
+    min-height: 100vh;
     background: #f0f0f0 ;
     padding: 0;
     margin: 0;
@@ -62,10 +63,10 @@ header {
 .left-header a{
     color:#f0f0f0;
     text-decoration: none;
-
 }
 
 header ul {
+    font-weight: 300;
     list-style-type: none;
     display: flex;
     margin: 0;
@@ -77,6 +78,10 @@ header ul li a {
     padding: 20px;
     display: inline-block;
     color: #fff;
+}
+
+#active{
+    font-weight: 700;
 }
 
 /* Hero Section **************************************************/
@@ -94,9 +99,9 @@ header ul li a {
 
 .hero-message{
     position: absolute;
-    top: 490px;
-    left: 75px;
-    width: 670px;
+    top: 354px;
+    left: 42px;
+    width: 668px;
 }
 
 .hero-message h1,h3{
@@ -143,6 +148,7 @@ header ul li a {
 /* Footer **************************************************/
 
   .bottom-footer{
+    margin-top: 20px;
     width: 100%;
     height: 50px;
     background-color: #161515;
@@ -159,7 +165,19 @@ header ul li a {
 /* Department Page **************************************************/
 
 .department-section{
-    margin-top: 30px ;
+    margin-top:100px;
+}
+
+.department-section h1{
+    margin: 0;
+    font-size: 48px;
+    font-weight: 600;
+    color: #161515;
+    text-align: center;
+}
+
+.box{
+    margin-top: 30px;
 }
 
 .box img{
@@ -170,11 +188,22 @@ header ul li a {
     object-position: -5px 22%;
 }
 
+.image-style{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
 .department-section .middle {
     transition: .5s ease;
-    opacity: 0;
+    opacity: 0;    
     position: absolute;
     text-align: center;
+    width: 500px;
+
   }
   
 .department-section:hover .image {
@@ -187,15 +216,52 @@ header ul li a {
   
 .department-section .text {
     text-align: center;
-    background-color: #4CAF50;
-    color: rgb(0, 0, 0);
+    background-color: #161515;
+    color: #fff;
     font-size: 24px;
     padding: 16px 32px;
+    margin-top: 30px;
   }
 
+/* Program Page**************************************************/
+
+.program-section{
+    margin-top:100px;
+}
+
+.program-section h1{
+    text-align: center;
+}
+
+.program{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.program-image-style{
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.program-text {
+    margin-left: 25px;
+}
+
+.program-text h2{
+    margin: 0;
+}
+
+
+/* Contact Page**************************************************/
+
+.contact-section{
+    margin-top:100px;
+}
 
 /* Form **************************************************/
-/* 
+
+
 .input {
     font-size: 16px;
     font-size: max(16px, 1em);    
@@ -210,13 +276,13 @@ input:focus{
     box-shadow: 0 0 5px 3px rgb(3, 73, 204,0.6);
 } 
 
-.fname, .lname, .e-mail, .phnumber{
+.fullname, .email{
     width: 300px;
     margin-left: 20px;
 }
 
 .form-input{
-    margin: 40px;
+    margin: 40px 0;
     font-weight: 500;
     font-size: 18px;
 }
@@ -225,24 +291,21 @@ input:focus{
     margin-left: 20px;
 }
 
-.r-btn{
-    margin-left: 20px;
-    height: 17px;
-    width: 17px;
-}
+textarea {
+    overflow: auto;
+  }
 
 .submit-btn{
-    background-color: rgb(3, 73, 204);    
-    color: rgb(39, 38, 38);
+    color: #fff;
 }
 
 .btn{
+    color: #fff;
+    background-color: #161515;
     margin: 5px 10px;
-    padding: 10px 15px;
+    padding: 15px 30px ;
+    border-radius: 40px;
     font-weight: 600;
-    box-shadow: 0 8px 8px -4px rgba(58, 104, 255, 0.9);
 }
 
 
-
-  */
