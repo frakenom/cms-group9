@@ -24,7 +24,7 @@ if( isset( $_POST['name'] ) )
     
     $query = 'UPDATE department SET
       name = "'.mysqli_real_escape_string( $connect, $_POST['name'] ).'",
-      url = "'.mysqli_real_escape_string( $connect, $_POST['url'] ).'",
+      url = "'.mysqli_real_escape_string( $connect, $_POST['url'] ).'"
 
       WHERE id = '.$_GET['id'].'
       LIMIT 1';
@@ -63,13 +63,19 @@ if( isset( $_GET['id'] ) )
 
 ?>
 
-<h2>Edit Depart</h2>
+<h2>Edit Department</h2>
 
 <form method="post">
   
   <label for="name">Name:</label>
   <input type="text" name="name" id="name" value="<?php echo htmlentities( $record['name'] ); ?>">
     
+  <br>
+
+   
+  <label for="url">URL:</label>
+  <input type="text" name="url" id="url" value="<?php echo htmlentities( $record['url'] ); ?>">
+  
   <br>
   
   <input type="submit" value="Edit Department">
