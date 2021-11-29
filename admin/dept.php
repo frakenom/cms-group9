@@ -38,7 +38,9 @@ include 'includes/wideimage/WideImage.php';
   <tr>
     <th></th>
     <th align="center">ID</th>
-    <th align="left">Name</th>
+    <th align="center">Name</th>
+    <th align="center">URL</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -52,6 +54,7 @@ include 'includes/wideimage/WideImage.php';
       <td align="left">
         <?php echo htmlentities( $record['name'] ); ?>
       </td>
+      <td align="center"><?php echo $record['url']; ?></td>
       <td align="center"><a href="dept_photo.php?id=<?php echo $record['id']; ?>">Photo</i></a></td>
       <td align="center"><a href="dept_edit.php?id=<?php echo $record['id']; ?>">Edit</i></a></td>
       <td align="center">

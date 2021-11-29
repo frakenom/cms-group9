@@ -42,6 +42,11 @@ if( isset( $_POST['name'] ) )
     
   
   <br>
+
+  <label for="url">URL:</label>
+  <input type="text" name="url" id="url">
+
+  <br>
   
   
   <input type="submit" value="Add Department">

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(245, 19, 245);
+    background-color: #f0f0f0;
 }
 
 a:link,
@@ -42,14 +42,14 @@ th {
 }
 
 .error {
-    color: #f00;
+    color: rgba(255, 0, 0, 0.728);
     text-align: center;
 }
 
 label {
     display: block;
-    margin: 0 0 10px 0;
-    text-align: left;
+    margin: 0;
+    text-align: center;
 }
 
 select {
@@ -105,8 +105,10 @@ input[type=submit] {
 
 #dashboard li {
     background-color: #000000;
-    display: inline-block;
-    width: 22%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
     margin: 1%;
     padding: 2%;
     box-sizing: border-box;
@@ -117,5 +119,5 @@ input[type=submit] {
 }
 
 #dashboard i {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }

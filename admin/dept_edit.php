@@ -24,6 +24,8 @@ if( isset( $_POST['name'] ) )
     
     $query = 'UPDATE department SET
       name = "'.mysqli_real_escape_string( $connect, $_POST['name'] ).'",
+      url = "'.mysqli_real_escape_string( $connect, $_POST['url'] ).'",
+
       WHERE id = '.$_GET['id'].'
       LIMIT 1';
     mysqli_query( $connect, $query );

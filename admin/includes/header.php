@@ -16,7 +16,7 @@
   
   <h1>Website Admin</h1>
   
-  <p style="padding: 0 1%; text-align: center;">
+  <p style="padding: 1%; text-align: center;">
     <a href="dashboard.php">Dashboard</a> | 
     <a href="logout.php">Logout</a>
   </p>
