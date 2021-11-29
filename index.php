@@ -66,7 +66,7 @@
         <!-- Home page ------------------------------------------------------------------ -->
         <div class="fix-container">
             <section class="hero-section">
-
+                
             <!-- Hero-image -->
             <?php while ($record = mysqli_fetch_array($result)) { ?>
 
