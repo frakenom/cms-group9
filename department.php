@@ -27,8 +27,8 @@
             }
 
             // created a query
-            $query = 'SELECT id, heading, subheading, body, image, url
-                FROM home';
+            $query = 'SELECT id, name, image
+                FROM department';
 
             // query execution
             $result = mysqli_query($connect, $query);
@@ -68,14 +68,26 @@
 
         <div class="fix-container">
             <section class="department-section">
+                
+                <h1> All Departments</h1>
 
             <!-- Hero-image -->
             <?php while ($record = mysqli_fetch_array($result)) { ?>
 
                 <div class="box">
-                    <img src="<?php echo $record['url']; ?>" alt="hero" width="1500">
-                </div>               
+                    <img src="<?php echo $record['image']; ?>" alt="hero" >       
+                </div> 
 
+                <div class="middle">
+                    <div class="text"><?php echo $record['name']; ?></div>
+                </div>
+            
+            <?php } ?>
+
+            </section>
+
+
+        </div>
 
         <footer> 
                 <div class="bottom-footer">
