@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
   
-  <title>Website Admin</title>
+  <title></title>
   
   <link href="/admin/styles.css?v=<?php echo time(); ?>" type="text/css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,9 @@
 </head>
 <body>
   
-  <h1>Website Admin</h1>
+  <h1></h1>
+  <div class="logo"><img src="https://i.ibb.co/T8zNhFC/Frakenom.png" alt="Frakenom" border="0" width="300px" height="300px"></a></div>
+
   
   <p style="padding: 1%; text-align: center;">
     <a href="dashboard.php">Dashboard</a> | 
