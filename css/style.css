@@ -60,7 +60,9 @@ header {
 }
 
 .left-header a{
-    color:#f0f0f0
+    color:#f0f0f0;
+    text-decoration: none;
+
 }
 
 header ul {
@@ -137,6 +139,59 @@ header ul li a {
     align-items: center;
   }
 
+
+/* Footer **************************************************/
+
+  .bottom-footer{
+    width: 100%;
+    height: 50px;
+    background-color: #161515;
+  }
+
+  .bottom-footer h3{
+    margin: 0;
+    padding-top: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+
+/* Department Page **************************************************/
+
+.department-section{
+    margin-top: 30px ;
+}
+
+.box img{
+    text-align: center;
+    width: 1500px;
+    height: 300px;
+    object-fit: cover;
+    object-position: -5px 22%;
+}
+
+.department-section .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+  }
+  
+.department-section:hover .image {
+    opacity: 0.3;
+  }
+  
+.department-section:hover .middle {
+    opacity: 1;
+  }
+  
+.department-section .text {
+    text-align: center;
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    padding: 16px 32px;
+  }
 
 
 /* Form **************************************************/

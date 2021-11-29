@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>CMS Assignment</title>
+        <title>Oasis Assignment</title>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
         <link rel="stylesheet" href="/css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
     </head>
@@ -27,8 +27,8 @@
             }
 
             // created a query
-            $query = 'SELECT id, heading, subheading, body, image, url
-                FROM home';
+            $query = 'SELECT id, name, image
+                FROM department';
 
             // query execution
             $result = mysqli_query($connect, $query);
@@ -50,10 +50,10 @@
                     <div class="right-header">
                         <ul>
                             <li>
-                                <a id="active" class="one" href="http://mmdd209-group9.infinityfreeapp.com">Home</a>
+                                <a class="one" href="http://mmdd209-group9.infinityfreeapp.com">Home</a>
                             </li>
                             <li>
-                                <a class="two" href="department.php">Department</a>
+                                <a id="active" class="two" href="department.php">Department</a>
                             </li>
                             <li>
                                 <a class="three" href="contact.php">Contact</a>
@@ -63,51 +63,27 @@
                 </nav>           
             </div>
         </header>
-        <!-- Home page ------------------------------------------------------------------ -->
+
+        <!-- Department page ------------------------------------------------------------------ -->
+
         <div class="fix-container">
-            <section class="hero-section">
+            <section class="department-section">
                 
+                <h1> All Departments</h1>
+
             <!-- Hero-image -->
             <?php while ($record = mysqli_fetch_array($result)) { ?>
 
-                <div class="hero-image">
-                    <img src="<?php echo $record['url']; ?>" alt="hero" height="1000px">
-                </div>               
-            <!-- Hero message -->
+                <div class="box">
+                    <img src="<?php echo $record['image']; ?>" alt="hero" >       
+                </div> 
 
-                <div class="hero-message">
-
-                    <h1><?php echo $record["heading"]; ?></h1>
-                    <h3><?php echo $record["subheading"];?></h3>
-                    <?php break;?>
-                    
+                <div class="middle">
+                    <div class="text"><?php echo $record['name']; ?></div>
                 </div>
+            
+            <?php } ?>
 
-
-                <?php } ?>
-
-                <div class="hero-button">
-                <p><a class="white" href="department.html"><span class="bg"></span><span class="base"></span><span class="text">Learn more</span></a></p>
-            </div>
-                
-            </section>
-
-            <section class="detail-section">
-                <h1>FACULTIES & PROGRAMS</h1>
-                    <div class="home-department">
-                        
-                        <?php while ($record = mysqli_fetch_array($result)){?>
-                            
-                            <div class="department">
-
-                                <img src="<?php echo $record['image']; ?>" alt="hero" height="300px">
-                                <h2><?php echo $record["heading"]; ?></h2>
-
-                            </div>
-                            
-                        <?php  } ?>
-                        
-                    </div>
             </section>
 
 
