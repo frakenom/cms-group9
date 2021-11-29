@@ -3,9 +3,11 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Oasis Assignment</title>
+        <title>Oasis University</title>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
         <link rel="stylesheet" href="/css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -27,7 +29,7 @@
             }
 
             // created a query
-            $query = 'SELECT id, name, image
+            $query = 'SELECT id, name, image, url
                 FROM department';
 
             // query execution
@@ -41,12 +43,20 @@
             }
         ?>
 
+<!-- start  -->
+
         <header>
-            <div class="fix-container">             
+            <div class="fix-container">
+
+            <!-- navigation -->
+             
                 <nav class="navbar">
                     <div class="left-header">
                         <a href="http://mmdd209-group9.infinityfreeapp.com">Oasis University</a>
                     </div>
+
+            <!-- //menu item -->
+
                     <div class="right-header">
                         <ul>
                             <li>
@@ -68,19 +78,23 @@
 
         <div class="fix-container">
             <section class="department-section">
-                
+
                 <h1> All Departments</h1>
 
-            <!-- Hero-image -->
+            <!-- Looping to get all depts. -->
             <?php while ($record = mysqli_fetch_array($result)) { ?>
 
-                <div class="box">
-                    <img src="<?php echo $record['image']; ?>" alt="hero" >       
-                </div> 
+            <!-- name of dept -->
 
                 <div class="middle">
                     <div class="text"><?php echo $record['name']; ?></div>
                 </div>
+
+             <!-- image and url of dept -->
+
+                <div class="box">
+                    <a href="<?php echo $record['url'];?>"><img class="image-style" src="<?php echo $record['image']; ?>" alt="hero" ></a>  
+                </div> 
             
             <?php } ?>
 
@@ -88,6 +102,8 @@
 
 
         </div>
+
+<!-- Footer -->
 
         <footer> 
                 <div class="bottom-footer">
